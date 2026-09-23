@@ -23,6 +23,8 @@ Spec ID: SPEC-BKG-001
 - ต้องทำหลัง: T-01
 - เสร็จเมื่อ: Unit test สำหรับการคืนค่า list ของ slots พร้อม remaining ทำงานผ่าน
 - สถานะ: พร้อมทำ
+ - เสร็จเมื่อ: Unit test สำหรับการคืนค่า list ของ slots พร้อม remaining ทำงานผ่าน
+ - สถานะ: เสร็จ รอทีมตรวจ
 
 ### T-03 สร้าง POST /bookings พื้นฐาน (บันทึกการจองและตัด remaining)
 - รองรับ: FR-BKG-04, IF-IDP-01
