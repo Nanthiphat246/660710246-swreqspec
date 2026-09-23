@@ -102,4 +102,23 @@
 ### สิ่งที่เกือบต้องเดาแต่ถามแทน
 - ไม่มีการเดา requirement ใหม่; ฟังก์ชัน `list_slots` ตีความการกรองตาม `date_from` และ `package_code` แบบง่ายตาม plan
 
+---
+
+## 2569-09-23 คำสั่ง: /implement T-05
+
+- เครื่องมือ: Copilot ใน VS Code
+- คำสั่งที่รัน: `/implement T-05 specs/001-booking/tasks.md`
+- ไฟล์ที่สร้าง/แก้:
+	- แก้: `backend/slots/service.py` (เพิ่ม `find_nearest_available_slots`)
+	- สร้าง: `backend/booking/service.py` (stub)
+	- สร้าง: `backend/tests/test_slots_nearby.py`
+	- แก้: `specs/001-booking/tasks.md` (เปลี่ยนสถานะ T-05 เป็น "เสร็จ รอทีมตรวจ")
+
+### ผลการรัน test
+- คำสั่งรัน: `pytest -q backend/tests/test_slots_nearby.py`
+- ผลลัพธ์: 1 passed
+
+### สิ่งที่เกือบต้องเดาแต่ถามแทน
+- การคัดกรองรวมวันถัดไปและการจัดลำดับเลือกโดยระยะเวลาสัมบูรณ์ (closest by time) ถูกตีความตาม FR-BKG-03 และ plan; ถ้าต้องการกฎคัดกรองอื่น (เช่น ไม่ข้ามวันหรือต้องอยู่ในแพ็กเกจเดียวกัน) แจ้งได้
+
 
