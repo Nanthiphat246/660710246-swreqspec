@@ -65,3 +65,23 @@
 - ไฟล์ `specs/001-booking/tasks.md` ถูกสร้างตามกติกาใน .github/prompts/tasks.prompt.md
 - ห้ามเริ่มทำงานใด ๆ จนกว่าทีมจะสั่งแยกต่างหาก
 
+---
+
+## 2569-09-23 คำสั่ง: /implement T-01
+
+- เครื่องมือ: Copilot ใน VS Code
+- คำสั่งที่รัน: `/implement T-01 specs/001-booking/tasks.md`
+- ไฟล์ที่สร้าง/แก้:
+	- สร้าง: `backend/db/models.py`
+	- สร้าง: `backend/db/migrations/001_init.py`
+	- แก้: `specs/001-booking/tasks.md` (เปลี่ยนสถานะ T-01 เป็น "เสร็จ รอทีมตรวจ")
+
+### ผลการรันสคริปต์ตรวจสอบ
+- คำสั่งรัน: `python3 backend/db/migrations/001_init.py` (รันใน workspace root)
+- ผลลัพธ์: `Created tables: ['audit_logs', 'bookings', 'slots']` (สร้างตารางใน SQLite in-memory สำเร็จ)
+
+### สิ่งที่เกือบต้องเดาแต่ถามแทน
+- ไม่มีการเดา requirement ใหม่; `queue_no` ถูกเพิ่มเป็นคอลัมน์แบบ `nullable` ตาม plan และรอ Q-02 อยู่
+
+---
+

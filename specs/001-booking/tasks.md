@@ -13,6 +13,8 @@ Spec ID: SPEC-BKG-001
 - ต้องทำหลัง: ไม่มี
 - เสร็จเมื่อ: สคริปต์ migration `upgrade(engine)` สร้างตาราง `slots`, `bookings`, `audit_logs` สำเร็จและรันผ่านใน SQLite memory
 - สถานะ: พร้อมทำ
+ - เสร็จเมื่อ: สคริปต์ migration `upgrade(engine)` สร้างตาราง `slots`, `bookings`, `audit_logs` สำเร็จและรันผ่านใน SQLite memory
+ - สถานะ: เสร็จ รอทีมตรวจ
 
 ### T-02 สร้าง model `slots` และ service คำนวณช่วงว่าง
 - รองรับ: FR-BKG-01, FR-BKG-06
