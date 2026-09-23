@@ -48,3 +48,20 @@
 - เพิ่มตารางตรวจ Constraint ครบ `CON-TECH-01`, `DOM-PDPA-01`, `IF-IDP-01`, `IF-HIS-01` และ `IF-NOT-01`
 - เพิ่ม test ครบ `AC-BKG-01` ถึง `AC-BKG-06`
 - คัดลอก `Q-01` ถึง `Q-03` ไว้ในหัวข้อสิ่งที่ยังไม่ทำ โดยไม่ตอบ Open Questions แทนทีม
+
+---
+
+## 2569-09-23 คำสั่ง: /tasks specs/001-booking/spec.md
+
+- เครื่องมือ: Copilot ใน VS Code
+- ไฟล์ที่สร้าง: specs/001-booking/tasks.md
+
+### ผลลัพธ์โดยย่อ
+1. แยกรายการงานเป็น 20 tasks (T-01 ถึง T-20)
+2. งานที่รอคำตอบ Open Questions: 2 งาน — T-09 (ออกแบบ `queue_no`) และ T-12 (แสดง `queue_no` บนหน้าจอ ถ้าต้องการรูปแบบเฉพาะ)
+3. ทุก AC ใน spec ถูกแมปไปยัง task ทดสอบเฉพาะ (T-14 ถึง T-19)
+
+### หมายเหตุ
+- ไฟล์ `specs/001-booking/tasks.md` ถูกสร้างตามกติกาใน .github/prompts/tasks.prompt.md
+- ห้ามเริ่มทำงานใด ๆ จนกว่าทีมจะสั่งแยกต่างหาก
+
