@@ -143,3 +143,21 @@
 - เติมช่อง “ทีมตัดสิน” ทุกแถว finding F-01 ถึง F-09 ด้วยหนึ่งในแนวทางแก้โค้ด/แก้ spec พร้อมเหตุผล; คง F-10 ไว้เฉพาะกลุ่ม AI เข้าใจผิด/ถอนข้อกล่าวหา
 - จำนวนแถวตามรอยไปข้างหน้ายังคง 15: ครบ 0, ยังไม่ถึง 9, รอ Q-xx 0, ช่องโหว่ 6; finding ใหม่ไม่มี เนื่องจากประเด็นที่ตรวจพบมี F-ID แล้ว
 - ตรวจ `git status --short`: มีเฉพาะ `specs/001-booking/rtm.md` และ `prompt-log.md`; ไม่มีการแก้ app หรือ tests; ไม่รัน test ซ้ำเพราะแก้เฉพาะเอกสาร
+
+---
+
+## 2569-10-07 08:52 คำสั่ง: เพิ่มหน้าจอ T-10/T-11 จาก verify lab และเทียบ mockup
+
+- เพิ่มไฟล์ mockup, หน้าจอ `SlotPicker`/`ConfirmBooking`, test และ prompt commands จาก `ppsajja/swreqspec-verify-lab-ui` โดยไม่ลบไฟล์เดิม
+- ต่อเนื้อหา UI-BKG-01/UI-BKG-02 จาก `ui-section.md` ท้าย `specs/001-booking/spec.md`
+- ปรับสถานะ T-10 และ T-11 เป็น “เสร็จ รอทีมตรวจ”
+- ผล `cd frontend && npm test`: 3 files / 3 tests ผ่าน; มี React `act(...)` warning จาก `setup.test.jsx`
+- เทียบ source กับข้อ “ต้องตรง” ใน spec และ mockup: UI-BKG-01 มี package selector/step 3 ขั้น แต่ใช้ “ว่าง N” แทน “เหลือ N ที่” และไม่มีตัวเลือกวัน/ดูวันถัดไป; UI-BKG-02 มีปุ่มยืนยัน แต่ใช้ข้อความ “เต็มแล้ว” แทน “ช่วงเวลาเต็ม” และ slice ตัวเลือกเหลือ 2; flow ยืนยันยังแทน slot ที่เลือกเป็นวันที่วันนี้/เวลา 09:00 และ success แสดง queue_no รูปแบบ A001 ที่ยังรอ Q-02
+- test UI ผ่านแต่ยัง assert ไม่ครบข้อกำหนด: test UI-BKG-02 ตรวจเพียงมีคำว่า “เต็ม” และมีตัวเลือกอย่างน้อยหนึ่งรายการ ไม่ตรวจ exact phrase/จำนวน 3
+- UI-BKG-02 ยังไม่มีสถานะคิวเดิมตาม AC-BKG-02 ใน mockup; logic T-04 ยังพร้อมทำ จึงระบุเป็นงานที่ยังไม่ถึง
+- ปรับ RTM เพิ่ม UI-BKG-01/UI-BKG-02 และ findings F-11 ถึง F-16 (ไม่ใช้ F-10 ซ้ำเพราะเคยถอนข้อกล่าวหาเดิม); คง findings และคำตัดสินเดิมไว้
+- ตาราง RTM มี 17 แถว: ครบ 0, ยังไม่ถึง 8, รอ Q-xx 0, ช่องโหว่ 9
+- ผล test ยืนยันก่อน commit: backend 7 passed; frontend 3 passed (มี `act(...)` warning ใน test setup)
+- ตรวจ `git diff --check` ผ่าน; รายการเปลี่ยนแปลงเป็นไฟล์ UI lab, mockups, prompt commands, spec/tasks/RTM และ log ตามคำสั่ง; ไม่มีไฟล์ใน `backend/app/` หรือ `backend/tests/` เปลี่ยน
+- ตาราง RTM ปัจจุบัน 17 แถว: ครบ 0, ยังไม่ถึง 8, รอ Q-xx 0, ช่องโหว่ 9
+- Commit/push: รอดำเนินการด้วยข้อความ `ui lab start`
