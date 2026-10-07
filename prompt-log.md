@@ -161,3 +161,9 @@
 - ตรวจ `git diff --check` ผ่าน; รายการเปลี่ยนแปลงเป็นไฟล์ UI lab, mockups, prompt commands, spec/tasks/RTM และ log ตามคำสั่ง; ไม่มีไฟล์ใน `backend/app/` หรือ `backend/tests/` เปลี่ยน
 - ตาราง RTM ปัจจุบัน 17 แถว: ครบ 0, ยังไม่ถึง 8, รอ Q-xx 0, ช่องโหว่ 9
 - Commit/push: รอดำเนินการด้วยข้อความ `ui lab start`
+
+### ผล commit/push
+
+- Commit สำเร็จ: `d18fcd9 ui lab start`
+- Push ไม่สำเร็จ: GitHub CLI ยังไม่ได้ login และ Git ไม่สามารถรับ password แบบ interactive ได้
+- ต้อง login กับ GitHub แล้วจึง push branch `main` จาก repo นี้
